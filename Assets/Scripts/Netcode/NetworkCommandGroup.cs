@@ -5,7 +5,7 @@ namespace Netcode
     [WorldSystemFilter(WorldSystemFilterFlags.ServerSimulation | WorldSystemFilterFlags.ClientSimulation | WorldSystemFilterFlags.ThinClientSimulation,
         WorldSystemFilterFlags.ServerSimulation | WorldSystemFilterFlags.ClientSimulation | WorldSystemFilterFlags.ThinClientSimulation)]
     [UpdateInGroup(typeof(SimulationSystemGroup), OrderLast = true)]
-    //[UpdateBefore(typeof(RpcSystem))]
+    [UpdateBefore(typeof(NetworkCommandSystem))]
     [UpdateAfter(typeof(EndSimulationEntityCommandBufferSystem))]
     public partial class NetworkCommandGroup : ComponentSystemGroup
     {

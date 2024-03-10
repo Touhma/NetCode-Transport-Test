@@ -3,6 +3,7 @@ using Netcode.Commands;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
+using UnityEngine;
 
 namespace Netcode
 {
@@ -73,6 +74,7 @@ namespace Netcode
     {
         public void OnCreate(ref SystemState state)
         {
+            Debug.Log("RpcCommandRequest - Create");
             EntityQueryBuilder builder = new EntityQueryBuilder(Allocator.Temp).WithAll<NetworkCommandCollection>();
             EntityQuery collectionQuery = state.GetEntityQuery(builder);
             NetworkCommandCollection rpcCollection = collectionQuery.GetSingleton<NetworkCommandCollection>();

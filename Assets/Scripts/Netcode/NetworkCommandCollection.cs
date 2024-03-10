@@ -13,6 +13,9 @@ namespace Netcode
     public struct RpcParameters
     {
         public DataStreamReader Reader;
+        public Entity Connection;
+        public EntityCommandBuffer.ParallelWriter CommandBuffer;
+        public int JobIndex;
     }
 
     public struct PortableFunctionPointer<T> where T : Delegate
@@ -70,7 +73,6 @@ namespace Netcode
 
         public void RegisterNetworkCommand(ComponentType type, PortableFunctionPointer<CreateDelegate> exec)
         {
-            Debug.Log("Registering " + type);
             ulong hash = TypeManager.GetTypeInfo(type.TypeIndex).StableTypeHash;
             TypeHashToIndex.Add(hash, NetworkCommandDatas.Length);
             NetworkCommandDatas.Add(new NetworkCommandData()

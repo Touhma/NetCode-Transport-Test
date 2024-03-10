@@ -8,7 +8,7 @@ namespace Netcode
         public byte Value;
     }
     [InternalBufferCapacity(0)]
-    public struct IncomingRpcDataStreamBuffer : IBufferElementData
+    public struct IncomingNetworkDataStreamBuffer : IBufferElementData
     {
         public byte Value;
     }
