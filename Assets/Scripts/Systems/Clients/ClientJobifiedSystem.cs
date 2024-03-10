@@ -109,7 +109,7 @@ namespace Systems.Clients
                         {
                             Log.Info("Receiving TestCommands");
                             TestCommands testCommands = new TestCommands();
-                            testCommands.Deserialize(ref stream);
+                            //testCommands.Deserialize(ref stream);
                             
                             foreach (uint u in testCommands.List)
                             {

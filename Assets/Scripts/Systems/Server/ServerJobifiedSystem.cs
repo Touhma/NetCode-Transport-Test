@@ -121,7 +121,7 @@ namespace Systems.Server
 
 
                         Driver.BeginSend(FragmentedPipeline, Connections[index], out DataStreamWriter writer);
-                        testCommands.Serialize(ref writer);
+                       // testCommands.Serialize(ref writer);
                         Driver.EndSend(writer);
                         Log.Info("Sending TestCommands");
                         testCommands.Dispose();
